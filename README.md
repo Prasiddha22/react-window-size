@@ -2,6 +2,8 @@
 
 @prasiddha/react-window-size provides with a useWindowSize hook.
 
+![GIF showing the basic working of react-debounced-hook](https://github.com/Prasiddha22/react-window-size/blob/main/media/window-resize.gif?raw=true)
+
 ## Installation
 
 Use the package manager [npm](https://nodejs.org/en/) to install react-simple-spoiler.
