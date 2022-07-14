@@ -1,6 +1,23 @@
-import * as React from 'react';
+import { useState, useEffect } from 'react';
+export type Sizes = { width: number; height: number };
+export function useWindowSize() {
+  function getSize(): Sizes {
+    return {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
+  }
 
-// Delete me
-export const Thing = () => {
-  return <div>the snozzberries taste like snozzberries</div>;
-};
+  const [windowSize, setWindowSize] = useState<Sizes>(getSize);
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize(getSize());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  return windowSize;
+}
